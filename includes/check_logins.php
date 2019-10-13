@@ -6,12 +6,10 @@
 #    By: mchocho <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/13 14:26:50 by mchocho           #+#    #+#              #
-#    Updated: 2019/10/13 14:28:23 by mchocho          ###   ########.fr        #
+#    Updated: 2019/10/13 16:18:51 by mchocho          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 <?php
-
-//This function validates login form data
 
 function ft_check_logins($dbc, $email='', $pass='')
 {
