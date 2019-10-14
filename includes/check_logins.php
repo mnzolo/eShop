@@ -6,13 +6,14 @@
 #    By: mchocho <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/13 14:26:50 by mchocho           #+#    #+#              #
-#    Updated: 2019/10/13 16:18:51 by mchocho          ###   ########.fr        #
+#    Updated: 2019/10/14 18:42:07 by mchocho          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 <?php
 
 function ft_check_logins($dbc, $email='', $pass='')
 {
+	require('./mysql_connect.php');
 	$errors = array();
 
 	//Check email first
@@ -32,7 +33,7 @@ function ft_check_logins($dbc, $email='', $pass='')
 		return array(false, $error);
 
 	//Create the query
-	$q = "SELECT user_id, name FROM users WHERE email='$e' AND pass=SHA1('$p')";
+	$q = "SELECT user_id, username FROM users WHERE email='$e' AND pass=SHA1('$p')";
 	$r = @mysqli_query($dbc, $q);
 
 	//Check the result:
