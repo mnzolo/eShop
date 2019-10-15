@@ -12,10 +12,10 @@
         }
     </style>
     <title>eShop</title>
+    <h1><img style="width:180px;height:100px;" src="images/Screenshot 2019-10-15 at 10.21.45.png" alt="logo"></h1>
     </head>
     <body>
         <div class="box">
-        <h1>Thanos</h1>
         </div>
         <div class="box">
         <form>

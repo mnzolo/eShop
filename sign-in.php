@@ -3,27 +3,21 @@
     <head>
     <style>
         <link rel="stylesheet" href="#">
-        .box{
-            border: 1px solid lightblue
-            background-color:lightblue;
-        }
         h1{
             font-family:manospace;
         }
     </style>
     <title>eShop</title>
+    <h1><img style="width:180px;height:100px;" src="images/Screenshot 2019-10-15 at 10.21.45.png" alt="logo"></h1>
     </head>
-    <body>
-        <div class="box">
-        <h1>Thanos</h1>
-        </div>
-        <div class="box">
-        <form>
-            <input type="submit" placeholder="Enter your email">
+    <body style="background-image:url('images/Air Jordan 1 Retro High.jpg');">
+        <div>
+        <form align="center" method="post">
+            <input style="width:600px;" type="text" name="useremail" placeholder="Enter your email">
             <br>
-            <input type="submit" placeholder="Enter Password">
+            <input style="width:600px;" type="password" name="userpasswd" placeholder="Enter Password">
             <br>
-            <button type="submit">submit</button>
+            <button type="submit">Log In</button>
         </form>
         </div>
     </body>
