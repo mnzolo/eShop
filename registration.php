@@ -38,10 +38,10 @@
         <hr>
         </div>
         <div class="box">
-            <form align="center" method="post">
+            <form align="center" action="includes/registration.php" method="POST" >
                 <input type="text" name="username" placeholder="Username">
                 <br>
-                <input" type="text" name="email" placeholder="Email">
+                <input type="text" name="email" placeholder="Email">
                 <br>
                 <input type="password" name="password" placeholder="Password">
                 <br>
