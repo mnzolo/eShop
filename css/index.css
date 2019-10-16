@@ -4,6 +4,11 @@ body {
 	background-size: cover;
 }
 
+.hide {
+	visibility: hidden;
+	display: none;
+}
+
 .page_wrapper {
 	display: block
 }
@@ -41,6 +46,7 @@ h1 {
   font-family: arial;
   display: inline-block;
   flex: 0 0 auto;
+  background: rgb( 238, 238, 238, 0.6);
 }
 
 .scrolling-wrapper {
@@ -80,6 +86,7 @@ h1 {
   width: 100%;
   font-size: 18px;
   border-right: 1px solid #eee;
+  
 }
 
 .card button:hover {
@@ -92,5 +99,20 @@ h1 {
 	background: #eeeeee;
 	padding: unset;
 	position: relative;
+}
+
+.footer .options a {
+	display: block;
+}
+
+.footer .copyright {
+	text-align: right;
+	position: relative;
+	top: -40px;
+	right: 20px;
+}
+
+.copyright a {
+	display: inline-block;
 }
 
