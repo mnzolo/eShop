@@ -11,11 +11,13 @@ function add_to_cart() {
 	if ($result) {
 		$result = array(
 			product[0]['id'] => array(
-				name => product[0]['name'],
-				code => product[0]['code'],
-				quantity => mysqli_real_escape_string($_POST['qty'], $dbc),
-				size => mysqli_real_escape_string($_POST['size'], $dbc),
-				image => product[0]['image_url'],
+				'name' => product[0]['name'],
+				'code' => product[0]['code'],
+				'quantity' => mysqli_real_escape_string($_POST['qty'], $dbc),
+				'price' => prduct[0]['price'],
+				'size' => mysqli_real_escape_string($_POST['size'], $dbc),
+				'total' => product[0]['price'] * $_POST['qty'],
+				'image' => product[0]['image_url'],
 			)
 		);
 
