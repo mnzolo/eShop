@@ -1,0 +1,112 @@
+body {
+	background: #eeeeee;
+}
+
+.product_container {
+	padding: 150px;
+}
+.container {
+	display: inline-block;
+	width: 45%;	
+}
+
+.main_image img {
+	width: 110%;
+	height: 110%; 
+}
+
+.sub_image {
+	width: 110%;
+	text-align: center;
+	margin-top: 3%;
+}
+
+.sub_image img {
+	width: 30%;
+	height: 30%;
+	margin: auto;
+	padding-right: 10px;
+}
+
+.details.container {
+	position: relative;
+	top: -30px;
+	height: 45%;
+}
+
+.details .name {
+	font-size: 270%;
+	position: relative;
+	top: 0px;
+}
+
+.user_ratings {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.user_ratings .rating {
+	height: 128px;
+	width: 128px;
+	background: url('images/5-stars.png');
+	-webkit-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	transform: scale(0.6)
+}
+
+.price {
+	display: inline-block;
+	font-size: 170%;
+}
+
+form {
+	margin-top: 6%;
+}
+
+label {
+	display: inline-block;
+	text-align: center;
+}
+
+label span {
+	font-size: 110%;
+}
+
+label:first-of-type {
+	width: 20%;
+	padding-right: 40px;
+}
+
+.size {
+	width: 100%;
+	border: none;
+	outline: none;
+}
+
+.description {
+	padding-top: 10px;
+	font-size: 95%;
+	width: 85%;
+}
+
+.right {
+	text-align: right;
+	padding-right: 5%;
+}
+
+label input, .size {
+	border: none;
+	width: 130px;
+	height: 20px; 
+	margin-top: 2%;
+}
+
+.btn {
+	margin-top: 15px;
+	width: 20%;
+	padding: 1%;
+	background: #000;
+	color: #eee;
+	border: none;
+	margin-left: 65px;
+}

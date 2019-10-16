@@ -10,6 +10,24 @@
         hr{
             color: blue;
         }
+
+        .box {
+            width: 70%;
+            border: 2px solid #000;
+            margin: auto;
+            text-align: center;
+        }
+
+        input {
+            width: 40%;
+            border: none;
+            outline: none;
+            background: none;
+            border-bottom: 1px solid #000;
+            font-size: 115%;
+            height: 40px;
+            padding: 1%;
+        }
     </style>
         <h1><img style="width:180px;height:100px;" src="images/Screenshot 2019-10-15 at 10.21.45.png" alt="logo"></h1>
     <title>eShop</title>
@@ -19,18 +37,18 @@
         <div>
         <hr>
         </div>
-        <div class="box">
-        <form align="center" method="post">
-            <input style="width:600px;" type="text" name="username" placeholder="Enter your name">
-            <br>
-            <input style="width:600px;" type="text" name="useremail" placeholder="Enter your email">
-            <br>
-            <input style="width:600px;" type="password" name="userpasswd" placeholder="Create Password">
-            <br>
-            <input style="width:600px;" type="password" name="userpasswd2" placeholder="Confirm Password">
-            <br>
-            <button type="submit">submit</button>
-        </form>
+        <div class="box">
+            <form align="center" method="post">
+                <input type="text" name="username" placeholder="Username">
+                <br>
+                <input" type="text" name="email" placeholder="Email">
+                <br>
+                <input type="password" name="password" placeholder="Password">
+                <br>
+                <input type="password" name="password2" placeholder="Confirm Password">
+                <br>
+                <button type="submit" name="submit" value="OK">Sign up</button>
+            </form>
         </div>
     </body>
 </html>
