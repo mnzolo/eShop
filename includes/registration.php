@@ -27,10 +27,7 @@ function registration() {
 			$errors[] = 'Fuck outta here. Your passwords don\'t match';
 			else
 			$passwd = mysqli_real_escape_string($conn, trim($_POST['password']));
-			
-			echo $email."\n";
-			echo $passwd."\n";
-			echo $name."\n";
+
 		//Check for errors
 		if (empty($errors)) {
 			//Register the user in the database
@@ -47,4 +44,3 @@ function registration() {
 	return $errors;
 }
 print_r(registration());
-echo "<br> finished!!!!";
