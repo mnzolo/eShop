@@ -16,14 +16,21 @@
 	</head>
 	<body style="">
 		<!-- Content goes here -->
+
+		<?php 
+			//Check if user is logged in
+
+
+		?>
+
         <div class="page_wrapper">
         	<div class="login_section">
 		        <form action="registration.php">
 		            <!-- <button style="width:400px;height:150px" align="center" type="submit" onclick="location.href='registration.php'" value="go to registration.php">SingUp</button> -->
-					<input align="center" style="width:400px; height:350px;"type="submit" name="sign_up" value="sign_up"> 
+					<input align="center" style="width:400px; height:350px;"type="submit" name="sign_up" value="sign_up" class="<?php if ($_SESSION['user_logged_in'] === true) echo "hide" ?>"> 
 		        </form>
 		        <form action="sign-in.php">
-					<input align="center" style="width:400px; height:350px;" type="submit" name="sign_ui" value="sign_in"> 
+					<input align="center" style="width:400px; height:350px;" type="submit" name="sign_ui" value="sign_in" class="<?php if ($_SESSION['user_logged_in'] === true) echo "hide" ?>"> 
 		        </form>
 			</div>
 			<div class="catalogue">
@@ -81,7 +88,12 @@
 
 
 				<div class="heading">Women</div>
-				<div id="hori_wrapper" class="mens content scrolling-wrapper">				
+				<div id="hori_wrapper" class="mens content scrolling-wrapper">		
+					<?php
+						
+					?>
+
+
 					<div class="product card">
 						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
 						<div class="details">
@@ -201,8 +213,8 @@
 				</div>
 
 				<div class="copyright">
-					&copy; 2019 Thanos Inc, All rights reserved <br />
-					Authors: <a href="https://github.com/mchocho">mchocho</a> | <a href="https://github.com/mnzolo">mnzolo</a> | <a href="https://github.com/Thokozani7">txaba</a>
+					<p>&copy; 2019 Thanos Inc, All rights reserved</p>
+					<p>Authors: <a href="https://github.com/mchocho">mchocho</a> | <a href="https://github.com/mnzolo">mnzolo</a> | <a href="https://github.com/Thokozani7">txaba</a></p>
 				</div>
 		</div>
 
