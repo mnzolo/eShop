@@ -15,6 +15,11 @@
                 border-collapse: collapse;
                 width:900px;
             }
+
+			td img {
+				width:250px;
+				height:200px;
+			}
         </style>
         <h1><img style="width:180px;height:100px;" src="images/Screenshot 2019-10-15 at 10.21.45.png" alt="logo"></h1>
         <h1 align="center" style="font-family: 'Times New Roman', Times, serif;">Check-Out_Cart</h1>
@@ -30,11 +35,9 @@
             <th>price</th>
             </tr>
             <tr>
-                <td><img style="width:250px; height:200px;" src="images/Nike_Adapt.jpg" alt="Nike_Adapt"></td>
-                <td>Nike_Adapt</td>
-                <td>10</td>
-                <td>1</td>
-                <td>R1700</td>
+			<?php
+               cart();
+			?>
             </tr>
         </table>
         <input align="right" type="submit" name="CheckOut" value="Checkout">
