@@ -23,25 +23,27 @@
 
 		?>
         <div class="page_wrapper">
-        	<h1>
-				<img style="width:180px;height:100px;" src="images/Screenshot 2019-10-15 at 10.21.45.png" alt="logo">
-			</h1>
+        	<div class="logo container">
+	        	<h1>
+					<img style="width:180px;height:100px;" src="images/Screenshot 2019-10-15 at 10.21.45.png" alt="logo">
+				</h1>
+			</div>
         	<div class="profile_container">
 	        	<!-- <div class="login_section <?php if ($_SESSION['user_logged_in'] === true) echo "hide" ?>"> -->
-	        	<div class="login_section">
+	        	<!-- <div class="login_section">
 			        <form action="registration.php">
-						<input type="submit" name="sign_up" value="sign_up" /> 
+						<input type="submit" name="sign_up" value="Sign up" /> 
 			        </form>
 			        <form action="sign-in.php">
-						<input type="submit" name="sign_ui" /> 
+						<input type="submit" name="sign_ui" value="Login"/> 
 			        </form>
-				</div>
+				</div> -->
 
 				<!-- <div class="logged_in_section <?php if ($_SESSION['user_logged_in'] !== true) echo "hide" ?>"> -->
 				<div class="logged_in_section">
 					<p class="greeting">Welcome Thanos<!-- <?php echo count($_SESSION['username']) ?>--></p>
 					<div clas="cart_container">
-						<i class="icon cart"></i>
+						<div class="icon cart"></div>
 						<span class="item_count">(3)<!-- <?php echo count($_SESSION['cart']) ?>--></span>
 						<a href="checkout.php"><button>Proceed to checkout</button></a>
 					</div>
@@ -128,9 +130,9 @@
 							require("includes/fetch_womens_sneakers.php");
 
 							if (!empty($women)) {
+								$str = "";
 								foreach($women as $item) {
-									$str = "";
-									$str .= '<div class="product card">';
+									$str = '<div class="product card">';
 									$str .= '<img src="images/' . $item['image'] . '" alt="' . $item['name'] . ' sneakers">';
 									$str .= '<div class="details">';
 									$str .= '<h3>' . $item['name'] . '</h3>';
@@ -138,9 +140,8 @@
 									$str .= '</div>';
 									$str .= '<p><button><a href="' . $_SERVER['HTTP_HOST'] . '/products?' . $item['id'] . '"</button></p>';
 									$str .= '</div>';
-
-									echo $str;
 								}
+								echo $str;
 							}
 					?> -->
 

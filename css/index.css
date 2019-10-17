@@ -10,13 +10,73 @@ body {
 	display: none;
 }
 
+.logo.container {
+	display: inline-block;
+}
+
 h1 {
 	display: inline-block;
 }
 
 .profile_container {
 	display: inline-block;
-	float: left;
+	padding: 2% 5% 0% 0%;
+	/*position: absolute;*/
+	float: right;
+}
+
+.login_section form {
+	display: inline-block;
+}
+
+.login_section form input, .logged_in_section button {
+	/*height: 25px;*/
+	width: 85px;
+	padding: 10px;
+	background: #000;
+	border: none;
+	color: #eee;
+}
+
+.logged_in_section button {
+	width: 100%;
+}
+
+.logged_in_section {
+	margin: -40px -20px 0% 0%;
+	background: #eee;
+	display: block;
+	/*padding: 5px;*/
+	/*position: abs*/
+}
+
+.logged_in_section .greeting {
+	font-size: 130%;
+	text-align: center;
+	display: block;
+	padding: 10px;
+}
+
+.logged_in_section .cart_container, .cart_container * {
+	display: block;
+}
+
+.icon.cart {
+	margin: auto;
+	margin-top: -35px;
+	width: 128px;
+	height: 128px;
+	background: url('../images/icons/order.png');
+	transform: scale(0.6);
+}
+
+.logged_in_section .item_count {
+	display: block;
+	font-size: 140%;
+	text-align: center;
+	color: green;
+	margin-top: -20px;
+	padding-bottom: 8px;
 }
 
 
