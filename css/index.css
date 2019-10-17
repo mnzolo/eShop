@@ -1,13 +1,24 @@
 body {
 	background: url('../images/Air Jordan XII WINGS.jpg');
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: contain;
+	margin: 0px;
 }
 
 .hide {
 	visibility: hidden;
 	display: none;
 }
+
+h1 {
+	display: inline-block;
+}
+
+.profile_container {
+	display: inline-block;
+	float: left;
+}
+
 
 .page_wrapper {
 	display: block
@@ -18,7 +29,7 @@ body {
 	display: block;
 }
 
-h1 {
+h3 {
     font-family:manospace;
 }
 

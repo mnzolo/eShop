@@ -1,27 +1,51 @@
+<?php	
+
+	if (empty($_GET['product']))
+		header("Location: ../index.php");
+
+	require('includes/mysql_connect.php');
+
+
+	$id = mysqli_real_escape_string($conn, trim($_GET['product']));
+	$q = "SELECT * FROM sneakers WHERE id='" . $id .'"';
+	$r = @mysqli_query($conn, $q);
+
+	if (!$r)
+		header("Location: ../index.php");
+	else if ($r->num_rows === 0)
+		header("Location: ../index.php");
+
+	$product = $r->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
 	    <meta charset="utf-8" />
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <title>Awesome Title</title>
+	    <title><?php echo product['name'] ?></title>
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/products.css" media="all" />
+        <link rel="stylesheet" href="css/product.css" media="all" />
 	</head>
 	<body>
 		<div class="product_container">
 			<div class="image container">
 					<div class="main_image">
 						<img src="images/Nike_Adapt.jpg" alt="This sneaker is fucking awesome!!!" />
+						<!-- <img src="images/ <?php echo product['image'] ?>" alt="This sneaker is fucking awesome!!!" /> -->
 					</div>
 					<div class="sub_image container">
 						<img src="images/Nike_Adapt.jpg" alt="More pictures of this fucken awesome product" />
 						<img src="images/Nike_Adapt.jpg" alt="Please buy my product" />
 						<img src="images/Nike_Adapt.jpg" alt="I'll show you 1 more pic" />
+
+						<!-- <img src="images/<?php echo product['image_1'] ?>" alt="More pictures of this fucken awesome product" />
+						<img src="images/<?php echo product['image_2'] ?>" alt="Please buy my product" />
+						<img src="images/<?php echo product['image_3'] ?>" alt="I'll show you 1 more pic" /> -->
 					</div>
 			</div>
 			<div class="details container">
-				<div class="name">Nike Adapt V2</div>
-				<div class="price">R 1200.00</div>
+				<div class="name">Nike Adapt V2 <!-- echo product['name'] --></div>
+				<div class="price">R 1200.00<!-- echo product['price'] --></div>
 				<div class="user_ratings">
 					<div class="rating background" title="Our users always love our products" ></div>
 				</div>
@@ -31,6 +55,7 @@
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 					Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Pellentesque habitant morbi tristique
 					senectus. In iaculis nunc sed augue lacus viverra. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium.
+					<!-- echo product['description'] -->
 				</div>
 				<div class="form section">
 					<form action="cart.php" method="POST">

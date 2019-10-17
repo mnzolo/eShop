@@ -12,7 +12,7 @@
 		<style>
 
     </style>
-        <h1><img style="width:180px;height:100px;" src="images/Screenshot 2019-10-15 at 10.21.45.png" alt="logo"></h1>
+        
 	</head>
 	<body style="">
 		<!-- Content goes here -->
@@ -22,20 +22,55 @@
 
 
 		?>
-
         <div class="page_wrapper">
-        	<div class="login_section">
-		        <form action="registration.php">
-		            <!-- <button style="width:400px;height:150px" align="center" type="submit" onclick="location.href='registration.php'" value="go to registration.php">SingUp</button> -->
-					<input align="center" style="width:400px; height:350px;"type="submit" name="sign_up" value="sign_up" class="<?php if ($_SESSION['user_logged_in'] === true) echo "hide" ?>"> 
-		        </form>
-		        <form action="sign-in.php">
-					<input align="center" style="width:400px; height:350px;" type="submit" name="sign_ui" value="sign_in" class="<?php if ($_SESSION['user_logged_in'] === true) echo "hide" ?>"> 
-		        </form>
+        	<h1>
+				<img style="width:180px;height:100px;" src="images/Screenshot 2019-10-15 at 10.21.45.png" alt="logo">
+			</h1>
+        	<div class="profile_container">
+	        	<!-- <div class="login_section <?php if ($_SESSION['user_logged_in'] === true) echo "hide" ?>"> -->
+	        	<div class="login_section">
+			        <form action="registration.php">
+						<input type="submit" name="sign_up" value="sign_up" /> 
+			        </form>
+			        <form action="sign-in.php">
+						<input type="submit" name="sign_ui" /> 
+			        </form>
+				</div>
+
+				<!-- <div class="logged_in_section <?php if ($_SESSION['user_logged_in'] !== true) echo "hide" ?>"> -->
+				<div class="logged_in_section">
+					<p class="greeting">Welcome Thanos<!-- <?php echo count($_SESSION['username']) ?>--></p>
+					<div clas="cart_container">
+						<i class="icon cart"></i>
+						<span class="item_count">(3)<!-- <?php echo count($_SESSION['cart']) ?>--></span>
+						<a href="checkout.php"><button>Proceed to checkout</button></a>
+					</div>
+				</div>
 			</div>
 			<div class="catalogue">
 				<div class="heading">Mens</div>
-				<div id="hori_wrapper" class="mens content scrolling-wrapper">				
+				<div id="hori_wrapper" class="mens content scrolling-wrapper">
+
+					<!-- <?php 
+							require("includes/fetch_mens_sneakers.php");
+
+							if (!empty($mens)) {
+								foreach($mens as $item) {
+									$str = "";
+									$str .= '<div class="product card">';
+									$str .= '<img src="images/' . $item['image'] . '" alt="/' . $item['name'] . ' sneakers">';
+									$str .= '<div class="details">';
+									$str .= '<h3>' . $item['name'] . '</h3>';
+									$str .= '<p class="price">' . $item['price'] . '</p>';
+									$str .= '</div>';
+									$str .= '<p><button><a href="' . $_SERVER['HTTP_HOST'] . '/products?' . $item['id'] . '"</button><p>';
+									$str .= '</div>';
+
+									echo $str;
+								}
+							}
+					?> -->
+
 					<div class="product card">
 						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
 						<div class="details">
@@ -89,113 +124,147 @@
 
 				<div class="heading">Women</div>
 				<div id="hori_wrapper" class="mens content scrolling-wrapper">		
-					<?php
-						
-					?>
+					<!-- <?php 
+							require("includes/fetch_womens_sneakers.php");
 
+							if (!empty($women)) {
+								foreach($women as $item) {
+									$str = "";
+									$str .= '<div class="product card">';
+									$str .= '<img src="images/' . $item['image'] . '" alt="' . $item['name'] . ' sneakers">';
+									$str .= '<div class="details">';
+									$str .= '<h3>' . $item['name'] . '</h3>';
+									$str .= '<p class="price">' . $item['price'] . '</p>';
+									$str .= '</div>';
+									$str .= '<p><button><a href="' . $_SERVER['HTTP_HOST'] . '/products?' . $item['id'] . '"</button></p>';
+									$str .= '</div>';
 
-					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-						<div class="details">
-							<h3>Nike Air Max Plus</h3>
-							<p class="price">R1900.00</p>
-						</div>
-						<p><button>Details</button></p>
+									echo $str;
+								}
+							}
+					?> -->
+
+				<div class="product card">
+					
+
+					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+					<div class="details">
+						<h3>Nike Air Max Plus</h3>
+						<p class="price">R1900.00</p>
 					</div>
-					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-						<div class="details">
-							<h3>Nike Air Max Plus</h3>
-							<p class="price">R1900.00</p>
-						</div>
-						<p><button>Details</button></p>
+					<p><button>Details</button></p>
+				</div>
+				<div class="product card">
+					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+					<div class="details">
+						<h3>Nike Air Max Plus</h3>
+						<p class="price">R1900.00</p>
 					</div>
-					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-						<div class="details">
-							<h3>Nike Air Max Plus</h3>
-							<p class="price">R1900.00</p>
-						</div>
-						<p><button>Details</button></p>
+					<p><button>Details</button></p>
+				</div>
+				<div class="product card">
+					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+					<div class="details">
+						<h3>Nike Air Max Plus</h3>
+						<p class="price">R1900.00</p>
 					</div>
-					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-						<div class="details">
-							<h3>Nike Air Max Plus</h3>
-							<p class="price">R1900.00</p>
-						</div>
-						<p><button>Details</button></p>
+					<p><button>Details</button></p>
+				</div>
+				<div class="product card">
+					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+					<div class="details">
+						<h3>Nike Air Max Plus</h3>
+						<p class="price">R1900.00</p>
 					</div>
-					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-						<div class="details">
-							<h3>Nike Air Max Plus</h3>
-							<p class="price">R1900.00</p>
-						</div>
-						<p><button>Details</button></p>
+					<p><button>Details</button></p>
+				</div>
+				<div class="product card">
+					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+					<div class="details">
+						<h3>Nike Air Max Plus</h3>
+						<p class="price">R1900.00</p>
 					</div>
-					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-						<div class="details">
-							<h3>Nike Air Max Plus</h3>
-							<p class="price">R1900.00</p>
-						</div>
-						<p><button>Details</button></p>
+					<p><button>Details</button></p>
+				</div>
+				<div class="product card">
+					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+					<div class="details">
+						<h3>Nike Air Max Plus</h3>
+						<p class="price">R1900.00</p>
 					</div>
+					<p><button>Details</button></p>
 				</div>
 			</div>
 
 			<div class="heading">All</div>
-				<div id="hori_wrapper" class="mens content scrolling-wrapper">				
-					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-						<div class="details">
-							<h3>Nike Air Max Plus</h3>
-							<p class="price">R1900.00</p>
-						</div>
-						<p><button>Details</button></p>
+			<div id="hori_wrapper" class="mens content scrolling-wrapper">
+
+			<!-- <?php 
+						if (!empty($men) || !empty($women)) {
+							foreach(shuffle(array_merge ($men, $women)) as $item) {
+								$str = "";
+								$str .= '<div class="product card">';
+								$str .= '<img src="images/' . $item['image'] . '" alt="' . $item['name'] . ' sneakers">';
+								$str .= '<div class="details">';
+								$str .= '<h3>' . $item['name'] . '</h3>';
+								$str .= '<p class="price">' . $item['price'] . '</p>';
+								$str .= '</div>';
+								$str .= '<p><button><a href="' . $_SERVER['HTTP_HOST'] . '/products?' . $item['id'] . '"</button></p>';
+								$str .= '</div>';
+
+								echo $str;
+							}
+						}
+				?> -->		
+				<div class="product card">
+					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+					<div class="details">
+						<h3>Nike Air Max Plus</h3>
+						<p class="price">R1900.00</p>
 					</div>
-					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-						<div class="details">
-							<h3>Nike Air Max Plus</h3>
-							<p class="price">R1900.00</p>
-						</div>
-						<p><button>Details</button></p>
-					</div>
-					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-						<div class="details">
-							<h3>Nike Air Max Plus</h3>
-							<p class="price">R1900.00</p>
-						</div>
-						<p><button>Details</button></p>
-					</div>
-					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-						<div class="details">
-							<h3>Nike Air Max Plus</h3>
-							<p class="price">R1900.00</p>
-						</div>
-						<p><button>Details</button></p>
-					</div>
-					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-						<div class="details">
-							<h3>Nike Air Max Plus</h3>
-							<p class="price">R1900.00</p>
-						</div>
-						<p><button>Details</button></p>
-					</div>
-					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-						<div class="details">
-							<h3>Nike Air Max Plus</h3>
-							<p class="price">R1900.00</p>
-						</div>
-						<p><button>Details</button></p>
-					</div>
+					<p><button>Details</button></p>
 				</div>
+				<div class="product card">
+					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+					<div class="details">
+						<h3>Nike Air Max Plus</h3>
+						<p class="price">R1900.00</p>
+					</div>
+					<p><button>Details</button></p>
+				</div>
+				<div class="product card">
+					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+					<div class="details">
+						<h3>Nike Air Max Plus</h3>
+						<p class="price">R1900.00</p>
+					</div>
+					<p><button>Details</button></p>
+				</div>
+				<div class="product card">
+					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+					<div class="details">
+						<h3>Nike Air Max Plus</h3>
+						<p class="price">R1900.00</p>
+					</div>
+					<p><button>Details</button></p>
+				</div>
+				<div class="product card">
+					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+					<div class="details">
+						<h3>Nike Air Max Plus</h3>
+						<p class="price">R1900.00</p>
+					</div>
+					<p><button>Details</button></p>
+				</div>
+				<div class="product card">
+					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+					<div class="details">
+						<h3>Nike Air Max Plus</h3>
+						<p class="price">R1900.00</p>
+					</div>
+					<p><button>Details</button></p>
+				</div>
+			</div>
 
 			<div class="footer">
 				<div class="options">
