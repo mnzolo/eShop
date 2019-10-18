@@ -12,11 +12,32 @@
 		<style>
 
     </style>
-        
+        <h1><img style="width:180px;height:100px;" src="images/Screenshot 2019-10-15 at 10.21.45.png" alt="logo"></h1>
 	</head>
 	<body>
 		<!-- Content goes here -->
 
+<<<<<<< HEAD
+		<?php 
+			//Check if user is logged in
+
+
+		?>
+
+        <div class="page_wrapper">
+        	<div class="login_section">
+		        <form action="registration.php">
+		            <!-- <button style="width:400px;height:150px" align="center" type="submit" onclick="location.href='registration.php'" value="go to registration.php">SingUp</button> -->
+					<input align="center" style="width:400px; height:350px;"type="submit" name="sign_up" value="sign_up" class="<?php if ($_SESSION['user_logged_in'] === true) echo "hide" ?>"> 
+		        </form>
+		        <form action="sign-in.php">
+					<input align="center" style="width:400px; height:350px;" type="submit" name="sign_ui" value="sign_in" class="<?php if ($_SESSION['user_logged_in'] === true) echo "hide" ?>"> 
+		        </form>
+			</div>
+			<div class="catalogue">
+				<div class="heading">Mens</div>
+				<div id="hori_wrapper" class="mens content scrolling-wrapper">				
+=======
         <div class="page_wrapper">
         	<div class="logo container">
 	        	<h1>
@@ -77,8 +98,19 @@
 						</div>
 						<p><button>Details</button></p>
 					</div>
+>>>>>>> ecec76cdc2213b70130e6630037d31970103e011
 					<div class="product card">
 						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<form  action = "product.php" method="POST">
+						<p><input type="submit" name="images/air_max_plus.jpg" value="Details"></p>
+						</form>
+					</div>
+					<div class="product card">
+						<img src="images/air-jordan_3.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
 						<div class="details">
 							<h3>Nike Air Max Plus</h3>
 							<p class="price">R1900.00</p>
@@ -86,7 +118,7 @@
 						<p><button>Details</button></p>
 					</div>
 					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<img src="images/air_jordan_space_jam.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
 						<div class="details">
 							<h3>Nike Air Max Plus</h3>
 							<p class="price">R1900.00</p>
@@ -94,7 +126,7 @@
 						<p><button>Details</button></p>
 					</div>
 					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<img src="images/air_jordans.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
 						<div class="details">
 							<h3>Nike Air Max Plus</h3>
 							<p class="price">R1900.00</p>
@@ -102,15 +134,7 @@
 						<p><button>Details</button></p>
 					</div>
 					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-						<div class="details">
-							<h3>Nike Air Max Plus</h3>
-							<p class="price">R1900.00</p>
-						</div>
-						<p><button>Details</button></p>
-					</div>
-					<div class="product card">
-						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<img src="images/air_jordans_1.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
 						<div class="details">
 							<h3>Nike Air Max Plus</h3>
 							<p class="price">R1900.00</p>
@@ -122,6 +146,140 @@
 
 				<div class="heading">Women</div>
 				<div id="hori_wrapper" class="mens content scrolling-wrapper">		
+<<<<<<< HEAD
+					<?php
+						
+					?>
+
+
+					<div class="product card">
+						<img src="images/Nike News.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+					<div class="product card">
+						<img src="images/Nike_Adapt.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+					<div class="product card">
+						<img src="images/jardan9.jpeg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+					<div class="product card">
+						<img src="images/jordan1.jpeg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+					<div class="product card">
+						<img src="images/jordan2.jpeg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+				
+				</div>
+			</div>
+
+			<div class="heading">All</div>
+				<div id="hori_wrapper" class="mens content scrolling-wrapper">				
+					<div class="product card">
+						<img src="images/Nike News.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+					<div class="product card">
+						<img src="images/Nike_Adapt.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+					<div class="product card">
+						<img src="images/jardan9.jpeg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+					<div class="product card">
+						<img src="images/jordan1.jpeg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+					<div class="product card">
+						<img src="images/jordan2.jpeg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+					
+					<div class="product card">
+						<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+					<div class="product card">
+						<img src="images/air-jordan_3.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+					<div class="product card">
+						<img src="images/air_jordan_space_jam.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+					<div class="product card">
+						<img src="images/air_jordans.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+					<div class="product card">
+						<img src="images/air_jordans_1.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
+						<div class="details">
+							<h3>Nike Air Max Plus</h3>
+							<p class="price">R1900.00</p>
+						</div>
+						<p><button>Details</button></p>
+					</div>
+=======
 					<?php 
 							require("includes/fetch_womens_sneakers.php");
 
@@ -162,8 +320,8 @@
 								}
 							}
 					?>	
+>>>>>>> ecec76cdc2213b70130e6630037d31970103e011
 				</div>
-			</div>
 
 			<div class="footer">
 				<div class="options">

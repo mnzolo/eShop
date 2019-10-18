@@ -1,19 +1,20 @@
 <?php	
 
-	if (empty($_GET['product']))
-		header("Location: ../index.php");
+	/* if (empty($_GET['product']))
+		header("Location: ./index.html");
+ */
+	require_once 'includes/mysql_connect.php';
 
-	require('includes/mysql_connect.php');
 
+	//$id = mysqli_real_escape_string($conn, trim($_GET['product']));
+	$q = "SELECT * FROM product WHERE image_url='$_POST[name]'; ";
+	$r = mysqli_query($conn, $q);
 
-	$id = mysqli_real_escape_string($conn, trim($_GET['product']));
-	$q = "SELECT * FROM sneakers WHERE id='" . $id .'"';
-	$r = @mysqli_query($conn, $q);
-
-	if (!$r)
-		header("Location: ../index.php");
+	
+	 if (!$r)
+		header("Location: ./index.php");
 	else if ($r->num_rows === 0)
-		header("Location: ../index.php");
+		header("Location: ./index.php");
 
 	$product = $r->fetch_assoc();
 ?>
@@ -22,12 +23,24 @@
 	<head>
 	    <meta charset="utf-8" />
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <title><?php echo product['name'] ?></title>
+	    <title><?php echo $product['name'] ?></title>
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/index.css" media="all" />
         <link rel="stylesheet" href="css/product.css" media="all" />
 	</head>
 	<body>
+<<<<<<< HEAD
+		<div class="product_container">
+			<div class="image container">
+					<div class="main_image">
+						<img src="<?php echo $product[image_url] ?>" alt="This sneaker is fucking awesome!!!" />
+						<!-- <img src="images/ <?php echo product['image'] ?>" alt="This sneaker is fucking awesome!!!" /> -->
+					</div>
+					<div class="sub_image container">
+						<img src="images/Nike_Adapt.jpg" alt="More pictures of this fucken awesome product" />
+						<img src="images/Nike_Adapt.jpg" alt="Please buy my product" />
+						<img src="images/Nike_Adapt.jpg" alt="I'll show you 1 more pic" />
+=======
 		<div class="page_wrapper">
         	<div class="logo container">
 	        	<h1>
@@ -43,6 +56,7 @@
 						<input type="submit" name="sign_ui" value="Login"/> 
 			        </form>
 				</div> -->
+>>>>>>> ecec76cdc2213b70130e6630037d31970103e011
 
 				<div class="logged_in_section <?php if ($_SESSION['user_logged_in'] !== true) echo "hide" ?>">
 					<p class="greeting">Welcome <?php echo count($_SESSION['username']) ?></p>
