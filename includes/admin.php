@@ -16,8 +16,10 @@
 						break;
 					case 'quantity':
 						$table[3] = '<td class="Quantity">'. $item . '</td>';
+						break;
 					case 'price':
 						$table[4] = '<td class="price">'. $item . '</td>';
+						break;	
 			}
 		}
 	}
@@ -39,6 +41,7 @@
 						break;
 					case 'password':
 						$table[3] = '<td class="userpassword">'. $item . '</td>';
+						break;
 			}
 		}
 	}
