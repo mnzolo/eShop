@@ -1,8 +1,8 @@
 <?php
     $dbServername = "localhost";
     $dbUsername = "root";
-    $dbPassword = "123456789";
-    $dbName = "loginsystem";
+    $dbPassword = "123456";
+    $dbName = "eshop";
 
     $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName) OR die('Could not connect MYSQL: ' . mysqli_connect_error() );
 

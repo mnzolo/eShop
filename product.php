@@ -33,7 +33,7 @@
 					senectus. In iaculis nunc sed augue lacus viverra. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium.
 				</div>
 				<div class="form section">
-					<form action="cart.php" method="POST">
+					<form method="POST" action="shopping-cart.php">
 						<label>
 							<span>SIZE</span>
 							<br />
@@ -56,8 +56,7 @@
 							<input type="number" name="qty" class="qty" oninput="this.value = Math.abs(this.value)" />
 						</label>
 						<br />
-						<button type="button" name="cart" class="cart btn" >ADD TO CART</button>
-						<button type="submit" name="checkout" class="checkout btn">CHECKOUT</button>
+							<input type="submit" name="ADD TO CART" value="NIKE_Adapt">
 						<input type="hidden" name="product_id" />
 					</form>
 				</div>
