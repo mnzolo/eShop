@@ -14,14 +14,9 @@
     </style>
         
 	</head>
-	<body style="">
+	<body>
 		<!-- Content goes here -->
 
-		<?php 
-			//Check if user is logged in
-
-
-		?>
         <div class="page_wrapper">
         	<div class="logo container">
 	        	<h1>
@@ -29,8 +24,7 @@
 				</h1>
 			</div>
         	<div class="profile_container">
-	        	<!-- <div class="login_section <?php if ($_SESSION['user_logged_in'] === true) echo "hide" ?>"> -->
-	        	<!-- <div class="login_section">
+	        	<!-- <div class="login_section <?php if ($_SESSION['user_logged_in'] === true) echo "hide" ?>">
 			        <form action="registration.php">
 						<input type="submit" name="sign_up" value="Sign up" /> 
 			        </form>
@@ -39,12 +33,14 @@
 			        </form>
 				</div> -->
 
-				<!-- <div class="logged_in_section <?php if ($_SESSION['user_logged_in'] !== true) echo "hide" ?>"> -->
-				<div class="logged_in_section">
-					<p class="greeting">Welcome Thanos<!-- <?php echo count($_SESSION['username']) ?>--></p>
+				<div class="logged_in_section <?php if ($_SESSION['user_logged_in'] !== true) echo "hide" ?>">
+					<p class="greeting">Welcome <?php echo count($_SESSION['username']) ?></p>
+					<div class="logout container">
+						<input type="submit" name="logout" value="Logout" />
+					</div>
 					<div clas="cart_container">
 						<div class="icon cart"></div>
-						<span class="item_count">(3)<!-- <?php echo count($_SESSION['cart']) ?>--></span>
+						<span class="item_count"><?php echo count($_SESSION['cart']) ?></span>
 						<a href="checkout.php"><button>Proceed to checkout</button></a>
 					</div>
 				</div>
@@ -65,7 +61,7 @@
 									$str .= '<h3>' . $item['name'] . '</h3>';
 									$str .= '<p class="price">' . $item['price'] . '</p>';
 									$str .= '</div>';
-									$str .= '<p><button><a href="' . $_SERVER['HTTP_HOST'] . '/products?' . $item['id'] . '"</button><p>';
+									$str .= '<p><button><a href="' . $_SERVER['HTTP_HOST'] . '/?products=' . $item['id'] . '"</button><p>';
 									$str .= '</div>';
 
 									echo $str;
@@ -126,7 +122,7 @@
 
 				<div class="heading">Women</div>
 				<div id="hori_wrapper" class="mens content scrolling-wrapper">		
-					<!-- <?php 
+					<?php 
 							require("includes/fetch_womens_sneakers.php");
 
 							if (!empty($women)) {
@@ -143,127 +139,29 @@
 								}
 								echo $str;
 							}
-					?> -->
+					?>
+				</div>
 
-				<div class="product card">
-					
+				<div class="heading">All</div>
+				<div id="hori_wrapper" class="mens content scrolling-wrapper">
 
-					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-					<div class="details">
-						<h3>Nike Air Max Plus</h3>
-						<p class="price">R1900.00</p>
-					</div>
-					<p><button>Details</button></p>
-				</div>
-				<div class="product card">
-					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-					<div class="details">
-						<h3>Nike Air Max Plus</h3>
-						<p class="price">R1900.00</p>
-					</div>
-					<p><button>Details</button></p>
-				</div>
-				<div class="product card">
-					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-					<div class="details">
-						<h3>Nike Air Max Plus</h3>
-						<p class="price">R1900.00</p>
-					</div>
-					<p><button>Details</button></p>
-				</div>
-				<div class="product card">
-					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-					<div class="details">
-						<h3>Nike Air Max Plus</h3>
-						<p class="price">R1900.00</p>
-					</div>
-					<p><button>Details</button></p>
-				</div>
-				<div class="product card">
-					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-					<div class="details">
-						<h3>Nike Air Max Plus</h3>
-						<p class="price">R1900.00</p>
-					</div>
-					<p><button>Details</button></p>
-				</div>
-				<div class="product card">
-					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-					<div class="details">
-						<h3>Nike Air Max Plus</h3>
-						<p class="price">R1900.00</p>
-					</div>
-					<p><button>Details</button></p>
-				</div>
-			</div>
+					<?php 
+							if (!empty($men) || !empty($women)) {
+								foreach(shuffle(array_merge($men, $women)) as $item) {
+									$str = "";
+									$str .= '<div class="product card">';
+									$str .= '<img src="images/' . $item['image'] . '" alt="' . $item['name'] . ' sneakers">';
+									$str .= '<div class="details">';
+									$str .= '<h3>' . $item['name'] . '</h3>';
+									$str .= '<p class="price">' . $item['price'] . '</p>';
+									$str .= '</div>';
+									$str .= '<p><button><a href="' . $_SERVER['HTTP_HOST'] . '/products?' . $item['id'] . '"</button></p>';
+									$str .= '</div>';
 
-			<div class="heading">All</div>
-			<div id="hori_wrapper" class="mens content scrolling-wrapper">
-
-			<!-- <?php 
-						if (!empty($men) || !empty($women)) {
-							foreach(shuffle(array_merge ($men, $women)) as $item) {
-								$str = "";
-								$str .= '<div class="product card">';
-								$str .= '<img src="images/' . $item['image'] . '" alt="' . $item['name'] . ' sneakers">';
-								$str .= '<div class="details">';
-								$str .= '<h3>' . $item['name'] . '</h3>';
-								$str .= '<p class="price">' . $item['price'] . '</p>';
-								$str .= '</div>';
-								$str .= '<p><button><a href="' . $_SERVER['HTTP_HOST'] . '/products?' . $item['id'] . '"</button></p>';
-								$str .= '</div>';
-
-								echo $str;
+									echo $str;
+								}
 							}
-						}
-				?> -->		
-				<div class="product card">
-					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-					<div class="details">
-						<h3>Nike Air Max Plus</h3>
-						<p class="price">R1900.00</p>
-					</div>
-					<p><button>Details</button></p>
-				</div>
-				<div class="product card">
-					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-					<div class="details">
-						<h3>Nike Air Max Plus</h3>
-						<p class="price">R1900.00</p>
-					</div>
-					<p><button>Details</button></p>
-				</div>
-				<div class="product card">
-					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-					<div class="details">
-						<h3>Nike Air Max Plus</h3>
-						<p class="price">R1900.00</p>
-					</div>
-					<p><button>Details</button></p>
-				</div>
-				<div class="product card">
-					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-					<div class="details">
-						<h3>Nike Air Max Plus</h3>
-						<p class="price">R1900.00</p>
-					</div>
-					<p><button>Details</button></p>
-				</div>
-				<div class="product card">
-					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-					<div class="details">
-						<h3>Nike Air Max Plus</h3>
-						<p class="price">R1900.00</p>
-					</div>
-					<p><button>Details</button></p>
-				</div>
-				<div class="product card">
-					<img src="images/air_max_plus.jpg" alt="Nike Air Max Plus shoes" style="width:100%">
-					<div class="details">
-						<h3>Nike Air Max Plus</h3>
-						<p class="price">R1900.00</p>
-					</div>
-					<p><button>Details</button></p>
+					?>	
 				</div>
 			</div>
 

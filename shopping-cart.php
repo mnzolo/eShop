@@ -10,8 +10,8 @@
 
     function  cart()
     {
+        $table = array();
         foreach($_SESSION['cart'] as $cart_item) {
-            $table = array();
             foreach($cart_item as $i => $item) {
                 switch($i) {
                     case 'image':
@@ -30,6 +30,8 @@
                 }
             }
         }
+        echo $table;
+
     }
     /* closecon(); */
 ?>

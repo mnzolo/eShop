@@ -1,7 +1,4 @@
 body {
-	background: url('../images/Air Jordan XII WINGS.jpg');
-	background-repeat: no-repeat;
-	background-size: contain;
 	margin: 0px;
 }
 
@@ -40,6 +37,7 @@ h1 {
 
 .logged_in_section button {
 	width: 100%;
+	cursor: pointer;
 }
 
 .logged_in_section {
@@ -81,7 +79,10 @@ h1 {
 
 
 .page_wrapper {
-	display: block
+	display: block;
+	background: url('../images/Air Jordan XII WINGS.jpg');
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 .page_wrapper:after {
@@ -128,6 +129,10 @@ h3 {
   -webkit-overflow-scrolling: touch;
 }
 
+.scrolling-wrapper::-webkit-scrollbar {
+  visibility: hidden;
+}
+
 .card img {
 	-webkit-transition: 0.2s;
   	transition: 0.2s;
@@ -135,6 +140,15 @@ h3 {
 
 .card:hover img {
 	transform: scale(1.1);
+}
+
+.logout input {
+	outline: 0;
+	  padding: 12px;
+	  color: white;
+	  background-color: #000;
+	  text-align: center;
+	  cursor: pointer;
 }
 
 .details {
@@ -157,7 +171,7 @@ h3 {
   width: 100%;
   font-size: 18px;
   border-right: 1px solid #eee;
-  
+  vertical-align: bottom;
 }
 
 .card button:hover {

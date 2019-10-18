@@ -1,3 +1,8 @@
+<?php   
+
+    if (empty($_SESSION['cart']))
+        header("Location: ../index.php");
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,15 +33,35 @@
     <body syle="background-color:grey; Display: flex;">
         <table class="box" method="post" action="shopping-cart.php">
             <tr>
-            <th>product</th>
+            <th>Product</th>
             <th>Brand</th>
             <th>Size</th>
             <th>Quantity</th>
-            <th>price</th>
+            <th>Price</th>
             </tr>
             <tr>
 			<?php
-               cart();
+               $table = array();
+                foreach($_SESSION['cart'] as $cart_item) {
+                    foreach($cart_item as $i => $item) {
+                        switch($i) {
+                            case 'image':
+                                $table[0] = '<td><img src="images/' . $item . '" alt="' . $cart_item['name'] . '"></td>';
+                                break;
+                            case 'name':
+                                $table[1] = '<td class="name">' . $item . '</td>';
+                                break;
+                            case 'size':
+                                $table[2] = '<td class="size">' . $item . '</td>';
+                                break;
+                            case 'quantity':
+                                $table[3] = '<td class="Quantity">'. $item . '</td>';
+                            case 'price':
+                                $table[4] = '<td class="price">'. $item . '</td>';
+                        }
+                    }
+                }
+                echo $table;
 			?>
             </tr>
         </table>
