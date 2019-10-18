@@ -15,12 +15,12 @@
 
             if($result->num_rows > 0)
             {
-                $values= $result->fetch_assoc();
-                foreach ($values as $item)
+                $value= $result->fetch_assoc();
+                foreach ($value as $item)
                 {
-                   switch($_POST["cart"])
+                   if ($_POST["cart"] == $item["brand"])
                     {
-                        case ($item["brand"]):
+                        //($item["brand"]):
                             echo "<tr><td>".$item["brand"]."</td><td>".$item["image_url"]."</td><td> R ".$item["Price"]."</td><tr>";
                             $total = $total + $item["price"];
                     }
