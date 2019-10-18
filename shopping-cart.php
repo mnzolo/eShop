@@ -2,6 +2,7 @@
     include ('creatingcart.php')
 ?>
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
     <head>
@@ -48,3 +49,32 @@
         <input align="right" type="submit" name="BuyMore" value="BuyMore">
    </body>
 </html>
+=======
+    function  cart()
+    {
+        $table = array();
+        foreach($_SESSION['cart'] as $cart_item) {
+            foreach($cart_item as $i => $item) {
+                switch($i) {
+                    case 'image':
+                        $table[0] = '<td><img src="images/' . $item . '" alt="' . $cart_item['name'] . '"></td>';
+                        break;
+                    case 'name':
+                        $table[1] = '<td class="name">' . $item . '</td>';
+                        break;
+                    case 'size':
+                        $table[2] = '<td class="size">' . $item . '</td>';
+                        break;
+                    case 'quantity':
+                        $table[3] = '<td class="Quantity">'. $item . '</td>';
+                    case 'price':
+                        $table[4] = '<td class="price">'. $item . '</td>';
+                }
+            }
+        }
+        echo $table;
+
+    }
+    /* closecon(); */
+?>
+>>>>>>> 331a15d78f30caf569f33ceff79682f6f22a5a37

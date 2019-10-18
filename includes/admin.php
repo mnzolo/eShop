@@ -1,3 +1,52 @@
+<?php
+	function	products()
+	{
+		foreach($_SESSION['cart'] as $cart_item) {
+			$table = array();
+			foreach($cart_item as $i => $item) {
+				switch($i) {
+					case 'image':
+						$table[0] = '<td><img src="images/' . $item . '" alt="' . $cart_item['name'] . '"></td>';
+						break;
+					case 'name':
+						$table[1] = '<td class="name">' . $item . '</td>';
+						break;
+					case 'size':
+						$table[2] = '<td class="size">' . $item . '</td>';
+						break;
+					case 'quantity':
+						$table[3] = '<td class="Quantity">'. $item . '</td>';
+						break;
+					case 'price':
+						$table[4] = '<td class="price">'. $item . '</td>';
+						break;	
+			}
+		}
+	}
+
+	function	user()
+	{
+		foreach($_SESSION['user'] as $cart_item) {
+			$table = array();
+			foreach($cart_item as $i => $item) {
+				switch($i) {
+					case 'name':
+						$table[0] = '<td class="username">' . $item . '</td>';
+						break;
+					case 'email':
+						$table[1] = '<td class="useremail">' . $item . '</td>';
+						break;
+					case 'password':
+						$table[2] = '<td class="userpassword">' . $item . '</td>';
+						break;
+					case 'password':
+						$table[3] = '<td class="userpassword">'. $item . '</td>';
+						break;
+			}
+		}
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,11 +61,15 @@
 	</head>
 	<body>
 		<div class="users_table">
-			content goes here
+			<?php
+				users();
+			?>
 		</div>
 
 		<div class="products">
-			content goes here
+			<?php
+				product();
+			?>
 		</div>
 	</body>
 </html>

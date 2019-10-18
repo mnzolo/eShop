@@ -2,7 +2,6 @@
 <html>
     <head>
     <style>
-        <link rel="stylesheet" href="#">
         h1{
             font-family:manospace;
         }
@@ -12,7 +11,7 @@
     </head>
     <body style="background-image:url('images/Air Jordan 1 Retro High.jpg');">
         <div>
-        <form align="center" method="post">
+        <form align="center" method="post" action="includes/check_logins.php">
             <input style="width:600px;" type="text" name="useremail" placeholder="Enter your email">
             <br>
             <input style="width:600px;" type="password" name="userpasswd" placeholder="Enter Password">

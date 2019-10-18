@@ -1,11 +1,88 @@
 body {
-	background: url('../images/Air Jordan XII WINGS.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
+	margin: 0px;
 }
 
+.hide {
+	visibility: hidden;
+	display: none;
+}
+
+.logo.container {
+	display: inline-block;
+}
+
+h1 {
+	display: inline-block;
+}
+
+.profile_container {
+	display: inline-block;
+	padding: 2% 5% 0% 0%;
+	/*position: absolute;*/
+	float: right;
+}
+
+.login_section form {
+	display: inline-block;
+}
+
+.login_section form input, .logged_in_section button {
+	/*height: 25px;*/
+	width: 85px;
+	padding: 10px;
+	background: #000;
+	border: none;
+	color: #eee;
+}
+
+.logged_in_section button {
+	width: 100%;
+	cursor: pointer;
+}
+
+.logged_in_section {
+	margin: -40px -20px 0% 0%;
+	background: #eee;
+	display: block;
+	/*padding: 5px;*/
+	/*position: abs*/
+}
+
+.logged_in_section .greeting {
+	font-size: 130%;
+	text-align: center;
+	display: block;
+	padding: 10px;
+}
+
+.logged_in_section .cart_container, .cart_container * {
+	display: block;
+}
+
+.icon.cart {
+	margin: auto;
+	margin-top: -35px;
+	width: 128px;
+	height: 128px;
+	background: url('../images/icons/order.png');
+	transform: scale(0.6);
+}
+
+.logged_in_section .item_count {
+	display: block;
+	font-size: 140%;
+	text-align: center;
+	color: green;
+	margin-top: -20px;
+	padding-bottom: 8px;
+}
+
+
 .page_wrapper {
-	display: block
+	display: block;
+	background: url('../images/Air Jordan XII WINGS.jpg');
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 .page_wrapper:after {
@@ -13,7 +90,7 @@ body {
 	display: block;
 }
 
-h1 {
+h3 {
     font-family:manospace;
 }
 
@@ -41,6 +118,7 @@ h1 {
   font-family: arial;
   display: inline-block;
   flex: 0 0 auto;
+  background: rgb( 238, 238, 238, 0.6);
 }
 
 .scrolling-wrapper {
@@ -51,6 +129,10 @@ h1 {
   -webkit-overflow-scrolling: touch;
 }
 
+.scrolling-wrapper::-webkit-scrollbar {
+  visibility: hidden;
+}
+
 .card img {
 	-webkit-transition: 0.2s;
   	transition: 0.2s;
@@ -58,6 +140,15 @@ h1 {
 
 .card:hover img {
 	transform: scale(1.1);
+}
+
+.logout input {
+	outline: 0;
+	  padding: 12px;
+	  color: white;
+	  background-color: #000;
+	  text-align: center;
+	  cursor: pointer;
 }
 
 .details {
@@ -80,6 +171,7 @@ h1 {
   width: 100%;
   font-size: 18px;
   border-right: 1px solid #eee;
+  vertical-align: bottom;
 }
 
 .card button:hover {
@@ -92,5 +184,20 @@ h1 {
 	background: #eeeeee;
 	padding: unset;
 	position: relative;
+}
+
+.footer .options a {
+	display: block;
+}
+
+.footer .copyright {
+	text-align: right;
+	position: relative;
+	top: -40px;
+	right: 20px;
+}
+
+.copyright a {
+	display: inline-block;
 }
 

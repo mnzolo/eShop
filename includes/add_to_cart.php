@@ -25,7 +25,7 @@ function add_to_cart() {
 			$_SESSION['cart'] = $result;
 		else {
 			if (in_array($product[0]['id'], array_keys($_SESSION['cart'])) {
-				forEach($_SESSION['cart'] as $i => $item && $product[0]['size'] !== $_SESSION[0]['size']) {
+				foreach ($_SESSION['cart'] as $i => $item && $product[0]['size'] !== $_SESSION[0]['size']) {
 					if ($product[0]['id'] == $i ) {
 						if (empty($_SESSION['cart'][$i]['quantity']))
 							$_SESSION['cart'][$i]['quantity'] = 0;
